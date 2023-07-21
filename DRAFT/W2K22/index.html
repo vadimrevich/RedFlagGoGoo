@@ -1,0 +1,274 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html lang="ru"
+      xml:lang="ru"
+      xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta content="HTML Tidy for Linux (vers 25 March 2009), see www.w3.org"
+          name="generator" />
+    <meta content="text/html; charset=utf-8"
+          http-equiv="Content-Type" />
+    <meta content="width=device-width, initial-scale=1.0, user-scalable=yes"
+          name="viewport" />
+    <meta content="Execute, RedFlagGoGoo, Application, Windows, Defender, Microsoft"
+          name="Keywords" />
+    <meta content=
+    "В файле приводится описание алгоритма работы прогрнаммы RedFlagGoGoo, вместе с кнопками запуска действий"
+          name="Description" />
+    <meta name="copyright"
+          content="New Internet Technologies Inc, 2023" />
+
+    <title>Executing Web Application | RedFlagGoGoo</title>
+    <link rel="stylesheet"
+          type="text/css"
+          href="index_files/css/style.css" /><!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <div class="header"
+         id="title-block-header">
+        <h1 class="title">Executing Web Application | RedFlagGoGoo</h1>
+    </div>
+
+    <h1>Порядок установки</h1>
+
+    <p>Вся установка пакетов идёт после нажатия соответствующей кнопки в hta приложении.
+    Пожалуйста, не нарушайте порядок нажатия кнопок. Ниже даны подсказки к кнопкам. После
+    нажатия на некоторые кнопки компьютер автоматически перезагрузится, это
+    нормально.</p>
+
+    <p>Очень часто реакций на нажатие кнопки не наблюдается. Это сделано сознательно, для
+    совместимоcти с редакциями Core. Триггером окончания программы будет закрытие окна
+    терминала или перезагрузка компьютера (кроме пункта 12, когда процесс установки
+    затягивается на несколько перезагрузок системы).</p>
+
+    <table>
+		<summary>
+        <caption>
+            Алгоритм работы веб-приложения
+        </caption>
+		</summary>
+        <tbody>
+            <tr>
+                <th>Действие</th>
+
+                <th>Описание</th>
+            </tr>
+
+            <tr>
+                <td><input type="button"
+					   id="button01"
+                       name="button01"
+                       value="Кнопка 01"
+                       align="middle"
+                       class="c-button" /></td>
+
+                <td rowspan="14">
+                    <ol type="1">
+                        <li>Вначале установите минимальные исключения для антивируса
+                        Microsoft Windows Defender — NIT TinyExclusions. Без него ни одна
+                        программа работать не будет. Нажмите <a href="#button01" title="button01">кнопку 01</a>.</li>
+
+                        <li>Потом установите в кучу основные бинарные файлы для загрузки
+                        программ и работы с архивами. Нажмите <a href="#button02" title="button02">кнопку 02</a>.</li>
+
+                        <li>Затем установите систему удалённой диагностики компьютера.
+                        Нажмите <a href="#button03" title="button03">кнопку 03</a>.</li>
+
+                        <li>Далее Вы установите основные дополнения к Вашей операционной
+                        системе. Нажмите <a href="#button04" title="button04">кнопку 04</a>. В систему загрузятся
+                        платформенно-независимые модули настройки.</li>
+
+                        <li>Затем будут установлены дополнения VC++ для запуска программ,
+                        написанных на компиляторе Microsoft. нажмите <a href="#button05" title="button05">кнопку 05</a>. После
+                        установки компьютер автоматически перезагрузится.</li>
+
+                        <li>Затем надо установить Microsoft .Net Framework. нажмите
+                        <a href="#button06" title="button06">кнопку 6</a>. Компьютер автоматически перезагрузится.</li>
+
+                        <li>Следующий пункт необходимо выполнить только для десктопных
+                        редакций Microsoft Windows Server, а именно — разблокировать
+                        загрузку из Интернета в Internet Explorer. Нажмите <a href="#button07" title="button07">кнопку 07</a>.
+                        Внимание! Если нажать эту кнопку в редакции Core, может произойти
+                        зависание программы. Будьте аккуратнее. Надо быть очень большим
+                        чудаком, чтобы перепутать Desktop и Core Edition даже в
+                        реверс-шелл!</li>
+
+                        <li>Затем идёт создание служебных каталогов для продуктов
+                        компании NIT. Нажмите <a href="#button08" title="button08">кнопку 08</a>.</li>
+
+                        <li>Потом надо ещё раз пропатчить Microsoft Windows Defender в
+                        автоматическом режиме. Нажмите <a href="#button09" title="button09">кнопку 09</a>.</li>
+
+                        <li>После нужно закрепить сделанные изменения. Нажмите <a href="#button10" title="button10">кнопку 10</a>.
+						</li>
+
+                        <li>Далее устанавлbвается скрипт лицензирования Microsoft Windows
+                        и установки Microsoft Office. Данный скрипт необходимо выполнять
+                        из оболочки RDP, физической или виртуальной консоли. Нажмите
+                        <a href="#button11" title="button11">кнопку 11</a>.</li>
+
+                        <li>Далее идёт длительный факультативный материал — установка
+                        админ-пака New Internet Technology. Процесс долгий, требует
+                        ручной перезагрузки компьютера и входа на виртуальную консоль. Вы
+                        можете нажать <a href="#button12" title="button12">кнопку 12</a>, а админ-пак установиться позже, Вы даже
+                        не заметите как. В процессе установки админ-пака компьютер может
+                        самостоятельно перезагрузиться. Это необходимо для установки
+                        обновлений безопасности.</li>
+                    </ol>
+
+                    <p>В дальнейшем ваш компьютер будет работать быстро и шустро, плюс у
+                    вас появится возможность пользоваться удалённой поддержкой компанией New
+                    Internet Technologies.</p>
+
+                    <p>Вы также можете протестировать установку всех пакетов, нажав
+                    к<a href="#button13" title="button13">нопку 13</a>. Она укажет неустановленные зависимости и способы их
+                    исправления.</p>
+
+                    <p>При нажатии на <a href="#button14" title="button14">кнопку 14</a> у вас будет проверен весь инструментарий
+                    для настройки компьютеров. Его имеет смысл наживать, если в системе
+                    отсутствуют какие-то пункты исправления (для диагностики).</p>
+                </td>
+            </tr>
+
+            <tr>
+                <td><input type="button"
+                       id="button02"
+				       name="button02"
+                       value="Кнопка 02"
+                       align="middle"
+                       class="c-button" /></td>
+            </tr>
+
+            <tr>
+                <td><input type="button"
+                       id="button03"
+                       name="button03"
+                       value="Кнопка 03"
+                       align="middle"
+                       class="c-button" /></td>
+            </tr>
+
+            <tr>
+                <td><input type="button"
+                       id="button04"
+                       name="button04"
+                       value="Кнопка 04"
+                       align="middle"
+                       class="c-button" /></td>
+            </tr>
+
+            <tr>
+                <td><input type="button"
+                       id="button05"
+                       name="button05"
+                       value="Кнопка 05"
+                       align="middle"
+                       class="c-button" /></td>
+            </tr>
+
+            <tr>
+                <td><input type="button"
+                       id="button06"
+                       name="button06"
+                       value="Кнопка 06"
+                       align="middle"
+                       class="c-button" /></td>
+            </tr>
+
+            <tr>
+                <td><input type="button"
+                       id="button07"
+                       name="button07"
+                       value="Кнопка 07"
+                       align="middle"
+                       class="c-button" /></td>
+            </tr>
+
+            <tr>
+                <td><input type="button"
+                       id="button08"
+                       name="button08"
+                       value="Кнопка 08"
+                       align="middle"
+                       class="c-button" /></td>
+            </tr>
+
+            <tr>
+                <td><input type="button"
+                       id="button09"
+                       name="button09"
+                       value="Кнопка 09"
+                       align="middle"
+                       class="c-button" /></td>
+            </tr>
+
+            <tr>
+                <td><input type="button"
+                       id="button10"
+					   name="button10"
+                       value="Кнопка 10"
+                       align="middle"
+                       class="c-button" /></td>
+            </tr>
+
+            <tr>
+                <td><input type="button"
+                       id="button11"
+                       name="button11"
+                       value="Кнопка 11"
+                       align="middle"
+                       class="c-button" /></td>
+            </tr>
+
+            <tr>
+                <td><input type="button"
+                       id="button12"
+                       name="button12"
+                       value="Кнопка 12"
+                       align="middle"
+                       class="c-button" /></td>
+            </tr>
+
+            <tr>
+                <td><input type="button"
+                       id="button13"
+                       name="button13"
+                       value="Кнопка 13"
+                       align="middle"
+                       class="c-button" /></td>
+            </tr>
+
+            <tr>
+                <td><input type="button"
+                       id="button14"
+                       name="button14"
+                       value="Кнопка 14"
+                       align="middle"
+                       class="c-button" /></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Указания к применению</h2>
+
+    <p>Данное приложение рассчитано, что пользователь самостоятельно установит все
+    необходимые дополнения и настройки на свой домашний компьютер (или рядовой
+    администратор на офисный сервер). Действия максимально упрощены. Однако, в случае
+    нестандартных ситуаций, испорченной системы или установки сторонних, не
+    сертифицированных корпорацией Microsoft сторонних средств, у Вас, возможно, возникнут
+    проблемы. Обратитесь тогда к более опытному системному администратору или
+    представителю Компании New Internet Technology Inc. по любому мессенджеру (список
+    смотри <a href="#buttonsite" title="Перейти на сайт">на сайте</a>).</p>
+	<p>
+		<input type="button"
+			   id="buttonsite"
+			   name="buttonsite"
+			   value="Перейти на сайт компании"
+			   align="middle"
+               class="c-button" />
+	</p>
+</body>
+</html>

