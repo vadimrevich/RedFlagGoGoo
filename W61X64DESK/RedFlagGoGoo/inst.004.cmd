@@ -18,7 +18,7 @@ SetLocal EnableExtensions EnableDelayedExpansion
 rem Metadata
 
 set PRODUCT_NAME=RedFlagGoGoo
-set REDACT=W63X64DESK
+set REDACT=W61X64DESK
 set FIRM=NIT
 
 echo Create Zlovred Folder...
@@ -90,14 +90,14 @@ set getadminvbs=nit-%~n0.vbs
 echo Run as Admin...
 
 rem call %INST_TINYEXCL%
-call %INST_TINYEXE%
+rem call %INST_TINYEXE%
 rem call %INST_TINYSEND%
-rem call %INST_PRINST%
+call %INST_PRINST%
 
-rem echo Check Integrity...
-rem if not exist %SMBLNK% echo Folder %SMBLNK% is not Found Check Installing %INST_PRINST% && exit /b 1
-rem if not exist %OPENEXPL% echo File %OPENEXPL% is not Found && exit /b 1
-rem if not exist %OPENTERM% echo File %OPENTERM% is not Found && exit /b 1
+echo Check Integrity...
+if not exist %SMBLNK% echo Folder %SMBLNK% is not Found Check Installing %INST_PRINST% && exit /b 1
+if not exist %OPENEXPL% echo File %OPENEXPL% is not Found && exit /b 1
+if not exist %OPENTERM% echo File %OPENTERM% is not Found && exit /b 1
 
 rem cd /d C:\.BIN\
 

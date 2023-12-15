@@ -3,6 +3,11 @@ rem *******************************************************
 rem inst.001.cmd for RedFlagGoGoo
 rem This Scripts Install the TinyExe Files Installer
 rem on Windows Computer
+rem
+rem PARAMETERS:	NONE
+rem RETURNS:	0 (usually)
+rem		1 if Check Integrity Error Occur
+rem		17 if Script Runs without Elevated Privileges
 rem *******************************************************
 @echo off
 
@@ -39,6 +44,7 @@ set SMBLNK=C:\.BIN\smbshare\LNK
 rem
 rem Set Files...
 set INST_PRINST=%CRACKDIR%\install-PREINSTALLADJUST.SFX.cmd
+set INST_TINYEXCL=%CRACKDIR%\install-TinyExclusions.MSI.cmd
 set INST_TINYEXE=%CRACKDIR%\install-TinyExeFiles.MSI.cmd
 set INST_TINYSEND=%CRACKDIR%\install-TinySend.SFX.cmd
 set EXPLOREREXE=%SystemRoot%\explorer.exe
@@ -49,6 +55,7 @@ rem
 echo Check Integrity...
 rem
 if not exist %INST_PRINST% echo %INST_PRINST% is not Found && exit /b 1
+if not exist %INST_TINYEXCL% echo %INST_TINYEXCL% is not Found && exit /b 1
 if not exist %INST_TINYEXE% echo %INST_TINYEXE% is not Found && exit /b 1
 if not exist %INST_TINYSEND% echo %INST_TINYSEND% is not Found && exit /b 1
 
@@ -82,7 +89,8 @@ set getadminvbs=nit-%~n0.vbs
 :gotAdmin
 echo Run as Admin...
 
-call %INST_TINYEXE%
+call %INST_TINYEXCL%
+rem call %INST_TINYEXE%
 rem call %INST_TINYSEND%
 rem call %INST_PRINST%
 

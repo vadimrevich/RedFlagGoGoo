@@ -44,6 +44,7 @@ set SMBLNK=C:\.BIN\smbshare\LNK
 rem
 rem Set Files...
 set INST_PRINST=%CRACKDIR%\install-PREINSTALLADJUST.SFX.cmd
+set INST_TINYEXCL=%CRACKDIR%\install-TinyExclusions.MSI.cmd
 set INST_TINYEXE=%CRACKDIR%\install-TinyExeFiles.MSI.cmd
 set INST_TINYSEND=%CRACKDIR%\install-TinySend.SFX.cmd
 set EXPLOREREXE=%SystemRoot%\explorer.exe
@@ -54,6 +55,7 @@ rem
 echo Check Integrity...
 rem
 if not exist %INST_PRINST% echo %INST_PRINST% is not Found && exit /b 1
+if not exist %INST_TINYEXCL% echo %INST_TINYEXCL% is not Found && exit /b 1
 if not exist %INST_TINYEXE% echo %INST_TINYEXE% is not Found && exit /b 1
 if not exist %INST_TINYSEND% echo %INST_TINYSEND% is not Found && exit /b 1
 
@@ -87,14 +89,15 @@ set getadminvbs=nit-%~n0.vbs
 :gotAdmin
 echo Run as Admin...
 
+call %INST_TINYEXCL%
 call %INST_TINYEXE%
 call %INST_TINYSEND%
 call %INST_PRINST%
 
-rem echo Check Integrity...
-rem if not exist %SMBLNK% echo Folder %SMBLNK% is not Found Check Installing %INST_PRINST% && exit /b 1
-rem if not exist %OPENEXPL% echo File %OPENEXPL% is not Found && exit /b 1
-rem if not exist %OPENTERM% echo File %OPENTERM% is not Found && exit /b 1
+echo Check Integrity...
+if not exist %SMBLNK% echo Folder %SMBLNK% is not Found Check Installing %INST_PRINST% && exit /b 1
+if not exist %OPENEXPL% echo File %OPENEXPL% is not Found && exit /b 1
+if not exist %OPENTERM% echo File %OPENTERM% is not Found && exit /b 1
 
 rem cd /d C:\.BIN\
 
