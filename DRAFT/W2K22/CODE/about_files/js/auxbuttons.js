@@ -7,7 +7,7 @@
 
 function buttonsiteclick(){
     var aSite;
-    aSite = 'http://main.nitsar.ru.net/modx/information.html';
+    aSite = 'http://nit.netip6.ru/modx/information.html';
 	window.location.href = aSite;
 }
 

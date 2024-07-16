@@ -62,5 +62,5 @@ Microsoft.
 ## Контактные данные корпорации New Internet Technologies Inc.
 
 Страница информации о компании:
-<http://main.nitsar.ru.net/modx/information.html>. Можете связываться
+<http://nit.netip6.ru/modx/information.html>. Можете связываться
 любым способом.
